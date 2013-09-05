@@ -1,4 +1,4 @@
-/**
+/*
  * Routes
  *
  * Sails uses a number of different strategies to route requests.
@@ -33,7 +33,7 @@ module.exports.routes = {
   // 
   // (This would also work if you had a file at: `/views/home.ejs`)
   '/': {
-    view: 'home/index'
+    view: 'static/index'
   }
 
   /*
