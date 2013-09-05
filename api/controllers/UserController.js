@@ -18,7 +18,10 @@ module.exports = {
 
  'create': function(req, res, next) {
     User.create( req.params.all(), function userCreated( err, usr ){
-        if(err) return next(err);
+        if(err) {
+            console.log(err);
+            return res.redirect('/user/new');
+        }
 
         res.json(usr);
     });
