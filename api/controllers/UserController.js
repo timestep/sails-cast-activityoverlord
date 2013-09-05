@@ -13,7 +13,9 @@ module.exports = {
   }
   */
  'new': function(req,res){
+    res.locals.flash = _.clone(req.session.flash);
     res.view();
+    req.session.flash = {};
  },
 
  'create': function(req, res, next) {
@@ -23,11 +25,12 @@ module.exports = {
             req.session.flash = {
                 err: err
             }
-            
+        
             return res.redirect('/user/new');
         }
 
         res.json(usr);
+        req.session.flash = {};
     });
  }
 
