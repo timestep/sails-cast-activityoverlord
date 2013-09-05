@@ -12,6 +12,8 @@ module.exports = {
     res.send('hello world!');
   }
   */
-  
+ 'new': function(req,res){
+    res.view();
+ }
 
 };
