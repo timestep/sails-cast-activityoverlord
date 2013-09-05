@@ -13,7 +13,28 @@ module.exports = {
   	/* e.g.
   	nickname: 'string'
   	*/
-    
+   name: {
+        type: 'string',
+        required: true
+   },
+
+   title: {
+        type: 'string'
+   },
+
+   email: {
+       type: 'string',
+       email: true,
+       required: true,
+       unique: true
+   },
+
+   encryptedPassword:{
+       type: 'string'
+   }
+
+
+
   }
 
 };
