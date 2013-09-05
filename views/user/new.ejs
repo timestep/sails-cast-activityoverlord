@@ -1,1 +1,16 @@
-<h1>User Signup Form</h1>
+<form class="form-signin" action="/user/create" method="POST">
+    
+    <h2 class="form-signin-heading">Create an account</h2>
+    
+    <input class="form-control" type="text" placeholder="your name" name="name">
+    <input class="form-control" type="text" placeholder="your title" name="title">
+    <input class="form-control" type="text" placeholder="email address"  name="email">
+    <input class="form-control" type="password" placeholder="password"  name="password">
+    <input class="form-control" type="password" placeholder="password confirmation"  name="confirmation">
+    
+    <br>
+   
+    <input class="btn btn-lg btn-primary btn-block" type="submit" value="Create Account">
+    <input type="hidden" names="_csrf=" values="<%=_csrf%>">
+    
+</form>
