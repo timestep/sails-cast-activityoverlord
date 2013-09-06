@@ -36,9 +36,9 @@ module.exports = {
  'show': function(req,res,next){
     User.findOne(req.param('id'), function foundUser(err,usr){
         if(err) return next(err);
-        if(!user) return next();
+        if(!usr) return next();
         res.view({
-            user: user
+            usr: usr
         });
     });
  }
