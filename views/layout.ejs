@@ -41,7 +41,7 @@
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                   </button>
-                  <a class="navbar-brand" href="#">activityOverlord</a>
+                  <a class="navbar-brand" href="/">activityOverlord</a>
              </div>
              <div class="navbar-collapse collapse">
                  <ul class="nav navbar-nav">
@@ -61,7 +61,7 @@
                 <% if (!session.authenticated) {%>
                     <form class="navbar-form navbar-right" action="/session/create">
                         <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Email" name="Email">
+                            <input class="form-control" type="text" placeholder="Email" name="email">
                         </div>
                         <div class="form-group">
                             <input class="form-control" type="password" placeholder="Password" name="password">
@@ -72,8 +72,8 @@
              </div>
           </div>
       </div>
-      <div class="container">
-         <%- body %>
+      <div class="container" style="margin-top:55px">
+        <%- body %>
 	  </div>	  
     
       <div class="container">
