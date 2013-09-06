@@ -12,6 +12,15 @@ module.exports = {
     res.send('hello world!');
   }
   */
+ 'index': function(req,res,next){
+     User.find(function foundUsers(err,users){
+        if(err) return next(err);
+        res.view({
+            users: users
+        });
+     });
+ },
+
  'new': function(req,res){
      res.view();
   },
