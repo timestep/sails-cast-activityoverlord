@@ -4,6 +4,7 @@
  * @module		:: Controller
  * @description	:: Contains logic for handling requests.
  */
+var bcrypt = require('bcrypt');
 
 module.exports = {
 
