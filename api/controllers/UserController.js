@@ -13,10 +13,8 @@ module.exports = {
   }
   */
  'new': function(req,res){
-    res.locals.flash = _.clone(req.session.flash);
-    res.view();
-    req.session.flash = {};
- },
+     res.view();
+  },
 
  'create': function(req, res, next) {
     User.create( req.params.all(), function userCreated( err, usr ){
