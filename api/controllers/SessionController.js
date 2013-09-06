@@ -65,10 +65,17 @@ module.exports = {
                 res.redirect('/user');
                 return;
             }
-
+            console.log(req.session);
             res.redirect('/user/show/' + user.id);
         });
     });
+ },
+
+ 'destroy': function(req,res,next){
+     console.log(req.session);
+     req.session.destroy();
+     res.redirect('/session/new');
+     console.log(req.session);
  }
 
 };
