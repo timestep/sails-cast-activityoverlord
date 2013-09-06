@@ -77,7 +77,7 @@ module.exports = {
         if(err) return next(err);
         if(!user) return next('User doesnt exsit');
 
-        User.destroy(req.param('id') function userDestroyed(err){
+        User.destroy(req.param('id'), function userDestroyed(err){
             if(err) return next(err);
         });
         
