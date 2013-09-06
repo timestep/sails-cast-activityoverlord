@@ -27,8 +27,19 @@ module.exports = {
             return res.redirect('/user/new');
         }
 
-        res.json(usr);
-        req.session.flash = {};
+       // res.json(usr);
+       // req.session.flash = {};
+        res.redirect('/user/show/'+usr.id);
+    });
+ },
+
+ 'show': function(req,res,next){
+    User.findOne(req.param('id'), function foundUser(err,usr){
+        if(err) return next(err);
+        if(!user) return next();
+        res.view({
+            user: user
+        });
     });
  }
 
