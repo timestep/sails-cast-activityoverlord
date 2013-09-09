@@ -36,6 +36,10 @@ module.exports.routes = {
     view: 'static/index'
   },
 
+  '/hello':{
+    view: 'static/hello'
+  }
+
   //'/user/new':{
   //  controller: 'UserController',
   //  action: 'new'
