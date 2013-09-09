@@ -23,9 +23,10 @@ module.exports = {
      res.view('session/new');
  },
 
- 'create': function(req,res,next){
+ create: function(req,res,next){
     if(!req.param('email') || !req.param('password')) {
-        var usernamePasswordRequiredError = [{name: 'usernamePasswordrequired', message: 'You must enter username and passwor'}];
+        var usernamePasswordRequiredError = 
+          [{name: 'usernamePasswordrequired', message: 'You must enter username and passwor'}];
         req.session.flash = {
             err: usernamePasswordRequiredError
         }
@@ -34,11 +35,12 @@ module.exports = {
         return;
     }
 
-    User.findOneByEmail(req.param('email')).done(function(err,user){
+    User.findOneByEmail(req.param('email'), function(err,user){
         if(err) return next(err);
 
         if(!user){
-            var noAccountError = [{ name: 'noAccount', message: 'The Email Address' + req.param('email') + ' not found.'}]
+            var noAccountError = 
+              [{ name: 'noAccount', message: 'The Email Address' + req.param('email') + ' not found.'}]
             req.session.flash = {
                 err: noAccountError
             }
@@ -62,7 +64,7 @@ module.exports = {
             req.session.authenticated = true;
             req.session.User = user;
 
-            
+
             if(req.session.User.admin){
                 res.redirect('/user');
                 return;
