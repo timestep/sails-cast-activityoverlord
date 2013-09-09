@@ -22,7 +22,7 @@ module.exports.policies = {
       'show': 'userCanSeeProfile',
       'edit': 'userCanSeeProfile',
       'update': 'userCanSeeProfile',
-      '*': 'admin'
+      '*': "admin"
   }
   /*
 	// Here's an example of adding some policies to a controller
