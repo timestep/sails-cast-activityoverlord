@@ -39,6 +39,8 @@ module.exports = {
             return res.redirect('/user/new');
         }
 
+        req.session.authenticated = true;
+        req.session.User = usr;
        // res.json(usr);
        // req.session.flash = {};
         res.redirect('/user/show/'+usr.id);
