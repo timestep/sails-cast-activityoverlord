@@ -42,6 +42,7 @@ module.exports = {
             req.session.flash = {
                 err: noAccountError
             }
+
             res.redirect('/session/new');
             return;
         }
@@ -61,6 +62,7 @@ module.exports = {
             req.session.authenticated = true;
             req.session.User = user;
 
+            
             if(req.session.User.admin){
                 res.redirect('/user');
                 return;

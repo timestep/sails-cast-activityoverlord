@@ -19,7 +19,7 @@ module.exports.policies = {
   user: {
       'new': "flash",
       'create': 'flash',
-      '*': 'authenticated'
+      '*': 'admin'
   }
   /*
 	// Here's an example of adding some policies to a controller
