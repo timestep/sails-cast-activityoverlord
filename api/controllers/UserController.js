@@ -15,13 +15,14 @@ module.exports = {
  'index': function(req,res,next){
      console.log(new Date());
      console.log(req.session.authenticated);
+     console.log(res.isJson);
+     console.log(res.isAjax);
 
      User.find(function foundUsers(err,users){
         if(err) return next(err);
-        res.view({
-            users: users
-        });
-     });
+        // else { res.view({  users: users }); }
+        else { res.json(users)}
+    });
  },
 
  'new': function(req,res){
@@ -51,9 +52,7 @@ module.exports = {
     User.findOne(req.param('id'), function foundUser(err,usr){
         if(err) return next(err);
         if(!usr) return next();
-        res.view({
-            usr: usr
-        });
+        res.json(usr);
     });
  },
 

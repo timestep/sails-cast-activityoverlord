@@ -1,4 +1,5 @@
 module.exports = function(req, res, ok){
+	console.log("ADMIN POLICY");
 	if(req.session.User && req.session.User.admin){
 		return ok();
 	}

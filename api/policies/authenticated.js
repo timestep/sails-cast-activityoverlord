@@ -2,7 +2,7 @@
  * Allow any authenticated user.
  */
 module.exports = function (req, res, ok) {
-
+  console.log("AUTHENTICATED POLICY")
   // User is allowed, proceed to controller
   if (req.session.authenticated) {
     return ok();

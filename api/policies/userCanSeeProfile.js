@@ -1,4 +1,5 @@
 module.exports = function(req,res,ok){
+	console.log("USER POLICY");
 	var sessionUserMatchesId = req.session.User.id == req.param('id');
 	var isAdmin = req.session.User.admin;
 	
