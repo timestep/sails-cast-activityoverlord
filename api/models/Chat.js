@@ -9,8 +9,8 @@
 module.exports = {
 
   attributes: {
-  	
-  	/* e.g.
+  
+    /* e.g.
   	nickname: 'string'
   	*/
     

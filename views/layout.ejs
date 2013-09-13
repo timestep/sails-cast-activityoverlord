@@ -46,12 +46,16 @@
              <div class="navbar-collapse collapse">
                  <ul class="nav navbar-nav">
                      <% if(session.authenticated) { %>
-                         <li class = "active">
+                        <li class = "active">
                           <a href="/user/show/<%=session.User.id%>">
                             <%=session.User.name%>
                           </a>
-                          <a href="/chat/new/">New Chat Room</a>
-                          <a href="/chat/join/">Join Chat Room</a>
+                        </li>
+                        <li class="active">
+                           <a href="/chat/new/">New Chat Room</a>
+                        </li>
+                        <li class="active">
+                            <a href="/chat/join/">Join Chat Room</a>
                         </li>
                      <% } %>
                      <% if(session.authenticated && session.User.admin) {%>
