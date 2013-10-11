@@ -20,8 +20,8 @@ module.exports = {
 
      User.find(function foundUsers(err,users){
         if(err) return next(err);
-        // else { res.view({  users: users }); }
-        else { res.json(users)}
+        else { res.view({  users: users }); }
+        // else { res.json(users)}
     });
  },
 
