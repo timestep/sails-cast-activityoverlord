@@ -64,12 +64,21 @@ module.exports = {
             req.session.authenticated = true;
             req.session.User = user;
 
+            user.online = true;
+            user.save(function (err,user){
+              if(err) return next(err);
+
+              User.publishUpdate(user.id,{
+                loggedIn: true,
+                id: user.id
+              });
+            });
 
             if(req.session.User.admin){
                 res.redirect('/user');
                 return;
             }
-            console.log(req.session);
+            // console.log(req.session);
             res.redirect('/user/show/' + user.id);
         });
     });
